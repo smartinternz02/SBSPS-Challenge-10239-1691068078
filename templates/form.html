@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLACEMENT DETAILS📝</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <center><h1>Select Visualization📊</h1></center>
+   <center><h3> "Visualizing The Future,One Pixel At A Time"</h3></center>
+   <hr>
+</head>
+<style>
+    .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+            margin-top: 250px;
+        
+        }
+    input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+</style>
+<body>
+    
+    <h1 style ="text-align: center;"></h1>
+    <form style ="text-align: center;" action='/visual' method = "POST" enctype="multipart/form-data">  
+    <h3><label for="category" >Select Your Visualization📊:</label></h3>
+<h3> <select style="background-color: #4CAF50; color: white;" id="category" name="select_cat">
+    {% for cat in category %}
+    <option value="{{cat}}" >{{cat|title}}</option>
+    {% endfor %}
+</select></h3>
+    
+    <input type="submit" value="Select">  
+    </form>
+
+    <div class="center-container" id="plot"></div>
+
+    <script>
+        var plot_data = {{ plot|safe }};
+        Plotly.newPlot('plot', plot_data.data, plot_data.layout);
+    </script>
+
+
+</body>
+</html>
