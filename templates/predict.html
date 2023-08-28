@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style ="text-align: center;">Plotly with Flask</h1>
+    <br>
+    <form style ="text-align: center;" action = '/predict' method="POST" enctype="multipart/form-data">
+        <table>
+            <td
+        <label for="gender">Enter Your Gender (Male/Female):</label>
+        <input type="radio">
+        <br><br>
+ 
+        <label for="ssc_p">Enter the SSLC Percentage:</label>
+        <input type="number" id="ssc_p" name="ssc_p">
+        <br><br>
+
+        <label for="hsc_p">Enter the HSC Percentage:</label>
+        <input type="number" name="hsc_p" id="hsc_p">
+        <br><br>
+
+
+        <label for="hsc_s">Enter the HSC Course:</label>
+        <select name="hsc_s" id="hsc_s">
+            <option value="Commerce">Commerce</option>
+            <option value="Science">Science</option>
+            <option value="Arts">Arts</option>
+        </select>
+        <br><br>
+
+
+        <label for="degree_p">Enter the Percentage:</label>
+        <input type="number" name="degree_p" id="degree_p">
+        <br><br>
+
+
+        <label for="degree_t">Enter the Degree Course:</label>
+        <select name="degree_t" id="degree_t">
+            <option value="Sci&Tech">Sci&Tech</option>
+            <option value="Comm&Mgmt">Comm&Mgmt</option>
+            <option value="Others">Others</option>
+        </select>
+        <br><br>
+
+
+        <label for="workex">Do you have any Work Experience:</label>
+        <select name="workex" id="workex">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <br><br>
+
+
+        <label for="project">No. of Project have you Done:</label>
+        <input type="number" name="project" id="project">
+        <br><br>
+
+
+        <label for="specialisation">Enter the Programming Language:</label>
+        <select name="specialisation" id="specialisation">
+            <option value="Java">Java</option>
+            <option value="python">Python</option>
+            <option value="frontend">Frontend</option>
+            <option value="c">C</option>
+            <option value="c++">C++</option>
+        </select>
+        <br><br>
+
+
+        <input type="submit" value="Predict">
+    </table>
+    </form>
+
+    {% if prediction %}
+    <h2>Prediction Result:</h2>
+    <p>{{ prediction }}</p>
+    {% endif %}
+    
+</body>
+</html>
