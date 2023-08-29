@@ -1,0 +1,21 @@
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    margin-top: 250px;
+
+}
+input[type="submit"] {
+background-color: #4CAF50;
+color: white;
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+}
+
+input[type="submit"]:hover {
+background-color: #45a049;
+}

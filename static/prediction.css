@@ -1,0 +1,33 @@
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    
+
+}
+body{
+background-image: url('pc4.jpg');
+opacity: 0.5;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+font-size: 25px;
+color: black;
+
+}
+input[type="reset"] {
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+}  
+input[type="submit"] {
+padding: 10px 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+}
+

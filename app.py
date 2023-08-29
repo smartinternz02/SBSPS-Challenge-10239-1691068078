@@ -57,8 +57,8 @@ def predict():
             prediction = "Congratulations! You are likely to be placed."
         else:
             prediction = "Sorry, you might not be placed."
-        return render_template('predict.html',prediction=prediction)
-    return render_template('predict.html',prediction = None)
+        return render_template('prediction.html',prediction=prediction)
+    return render_template('prediction.html',prediction = None)
 
 def Gender_Distribution():
     fig = px.pie(data,names='gender',title='Gender Distribution')
