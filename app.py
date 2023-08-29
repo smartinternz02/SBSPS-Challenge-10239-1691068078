@@ -44,15 +44,15 @@ def predict():
         project = int(request.form['project'])
         specialisation = request.form['specialisation']
         
-        gender_x = gender_dict[gender]
+        gender_x = gender_dict[select_gender]
         hsc_s_x = hsc_s_dict[hsc_s]
         degree_t_x = degree_t_dict[degree_t]
         workex_x = workex_dict[workex]
         specialisation_x = specialisation_dict[specialisation]
 
-        # x_pred = np.array([[gender_x, ssc_p, hsc_p, hsc_s_x, degree_p, degree_t_x, workex_x, project, specialisation_x]])
-        # predicted_status = model.predict(x_pred)
-        # print(predicted_status)
+        x_pred = np.array([[gender_x, ssc_p, hsc_p, hsc_s_x, degree_p, degree_t_x, workex_x, project, specialisation_x]])
+        predicted_status = model.predict(x_pred)
+        print(predicted_status)
         if predicted_status >= 0.5:
             prediction = "Congratulations! You are likely to be placed."
         else:
@@ -202,7 +202,7 @@ degree_t_dict = {'Sci&Tech': 2, 'Comm&Mgmt': 0, 'Others': 1}
 workex_dict = {'No': 0, 'Yes': 1}
 specialisation_dict = {'Java': 0, 'python': 4, 'frontend': 3, 'c': 1, 'c++': 2}
 
-# model = joblib.load('GaussianNB.pkl')
+model = joblib.load('RandomForest.pkl')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -2,9 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh;
-    
-
+    height: 15vh;
+    margin-right: 1000px;
+}
+.head{
+    margin-top: 250px;
+    margin-left:60px ;
 }
 form {
 text-align: center;
@@ -13,10 +16,11 @@ text-align: center;
 input[type="file"] {
 display: block;
 margin: 20px auto;
+align-items: c;
 }
 
 input[type="submit"] {
-background-color: #4CAF50;
+background-color: #55ACEE;
 color: white;
 padding: 10px 20px;
 border: none;
@@ -25,7 +29,7 @@ cursor: pointer;
 font-size: 16px;
 }
 
-input[type="file"] {
+/* input[type="file"] {
 background-color: #4CAF50;
 color: white;
 padding: 10px 20px;
@@ -33,11 +37,17 @@ border: none;
 border-radius: 5px;
 cursor: pointer;
 font-size: 16px;
-}
+} */
 
 input[type="submit"]:hover {
-background-color: #45a049;
+background-color: #2d99ec;
 }
-input[type="file"]:hover {
+/* input[type="file"]:hover {
 background-color: #45a049;
+} */
+body{
+    background-image: url('back.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }

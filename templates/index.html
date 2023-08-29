@@ -3,18 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PLACEMENT DETAILS📝</title>
+    <title>SIGMOID</title>
+    <link rel="icon" href="{{ url_for('static',filename='sig.jpg')}}">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <link rel="stylesheet" href="{{ url_for('static',filename='form.css')}}">
- 
-    <center><h1>UPLOAD DATASET📁</h1></center>
-    <center><h3>"Your DATA,Your DISCOVERY"</h3></center>
-    <hr>
+
+    <link rel="stylesheet" href="{{ url_for('static',filename='index.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='nav.css')}}">
+    
 </head>
 
 <body>
-   
+
+    <div class="topnav" id="myTopnav">
+        <img src="{{ url_for('static',filename='sig.jpg')}}" alt="">
+        <a style="float:right" href="#news">ABOUTUS</a>
+        <a style="float:right" href="pre.html">PREDICTION</a>
+        <a style="float:right" href="visu.html">VISUALIZATION</a>
+        <a style="float:right" href="data.html">DATASET</a>
+        </div>
+
+    <div class="head">
+        <h1>UPLOAD DATASET📁</h1>
+        <h3>"Your DATA,Your DISCOVERY"</h3>
+    </div>
+    
+    
     <div class="center-container">
+        
     <form style ="text-align: center;" action='/' method = "POST" enctype="multipart/form-data">  
         <input type="file" name="file" />  
         <input type = "submit" value="Upload"> 

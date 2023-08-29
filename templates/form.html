@@ -12,11 +12,11 @@
    <hr>
 </head>
 <body>
-    
+   
     <h1 style ="text-align: center;"></h1>
     <form style ="text-align: center;" action='/visual' method = "POST" enctype="multipart/form-data">  
     <h3><label for="category" >Select Your Visualization📊:</label></h3>
-<h3> <select style="background-color: #4CAF50; color: white;" id="category" name="select_cat">
+<h3> <select style="background-color: #55ACEE; color: white;" id="category" name="select_cat">
     {% for cat in category %}
     <option value="{{cat}}" >{{cat|title}}</option>
     {% endfor %}

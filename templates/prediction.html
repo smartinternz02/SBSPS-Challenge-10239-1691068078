@@ -10,72 +10,81 @@
 <body>
     <center>
         <div class="center-container">
-    <form>
+    <form action="/predict" method = "POST" enctype="multipart/form-data">
         <table>
             <tr>
                 <td>Gender:</td>
-                <td><input type="radio" name="gender">Male</td>
-                <td><input type="radio" name="gender">Female</td>
+                <td><input type="radio" name="select_gender" value="male">Male</td>
+                <td><input type="radio" name="select_gender" value="female">Female</td>
+
             </tr>
             <tr>
-                <td>Enter the SSLC Percentage:</td> <td><input type="number" placeholder="SSLC Percentage"></td>
+                <td>Enter the SSLC Percentage:</td> <td><input type="number" name="ssc_p" placeholder="SSLC Percentage"></td>
             </tr>
             <tr>
-                <td>Enter the HSC Percentage:</td><td><input type="number" placeholder="HSC Percentage"></td>
+                <td>Enter the HSC Percentage:</td><td><input type="number" name="hsc_p" placeholder="HSC Percentage"></td>
             </tr>
             <tr>
                 <td>Enter the HSC course:</td>
                 <td>
-                    <select>
-                        <option>Science</option>
-                        <option>Commerce</option>
-                        <option>Arts</option>
+                    <select name="hsc_s">
+                        <option value="Science">Science</option>
+                        <option value="Commerce">Commerce</option>
+                        <option value="Arts">Arts</option>
                     </select>
                 </td>
             </tr>
             <tr>
-                <td>Enter The Degree Percentage:</td><td><input type="number" placeholder="Degree Percentage"></td>
+                <td>Enter The Degree Percentage:</td><td><input type="number" name="degree_p" placeholder="Degree Percentage"></td>
             </tr>
             <tr>
                 <td>Enter The Degree Course:</td>
                 <td>
-                    <select>
-                        <option>Sci&Tec</option>
-                        <option>Comm&Mgmt</option>
-                        <option>Others</option>
+                    <select name="degree_t">
+                        <option value="Sci&Tech">Sci&Tech</option>
+                        <option value="Comm&Mgmt">Comm&Mgmt</option>
+                        <option value="Others">Others</option>
                     </select>
                 </td>
             </tr>
             <tr>
                 <td>Do You Any Work Experience:</td>
                 <td>
-                    <select>
-                        <option>Yes</option>
-                        <option>No</option>
+                    <select name="workex">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
                     </select>
                 </td>
             </tr>
             <tr>
-                <td>Number Of Project Have You Done:</td><td><input type="number" placeholder="Project"></td>
+                <td>Number Of Project Have You Done:</td><td><input type="number" name="project" placeholder="Project"></td>
             </tr>
             <tr>
                 <td>Ente The Programming Language:</td>
                 <td>
-                    <select>
-                        <option>Java</option>
-                        <option>Python</option>
-                        <option>Frontend</option>
-                        <option>C</option>
-                        <option>C++</option>
+                    <select name="specialisation">
+                        <option value="Java">Java</option>
+                        <option value="python">Python</option>
+                        <option value="frontend">Frontend</option>
+                        <option value="c">C</option>
+                        <option value="c++">C++</option>
                     </select>
                 </td>
             </tr>
+            <div class="tr">
             <tr>
+               
                 <td><input style="background-color:#55ACEE ;color: white;" type="reset"></td>
                 <td><input  style="background-color:#55ACEE ;color: white;"type="submit" value="Predict"></td>
+            
             </tr>
+        </div>
         </table>
     </form>
+    {% if prediction %}
+    <h2>Prediction Result:</h2>
+    <p>{{ prediction }}</p>
+    {% endif %}
 </center>
 
 </body>
