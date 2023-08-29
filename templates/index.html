@@ -6,19 +6,16 @@
     <title>SIGMOID</title>
     <link rel="icon" href="{{ url_for('static',filename='sig.jpg')}}">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-
     <link rel="stylesheet" href="{{ url_for('static',filename='index.css')}}">
     <link rel="stylesheet" href="{{ url_for('static',filename='nav.css')}}">
-    
 </head>
 
 <body>
-
     <div class="topnav" id="myTopnav">
         <img src="{{ url_for('static',filename='sig.jpg')}}" alt="">
         <a style="float:right" href="#news">ABOUTUS</a>
-        <a style="float:right" href="pre.html">PREDICTION</a>
-        <a style="float:right" href="visu.html">VISUALIZATION</a>
+        <a style="float:right" href="{{ url_for('predict') }}">PREDICTION</a>
+        <a style="float:right" href="{{ url_for('visual') }}">VISUALIZATION</a>
         <a style="float:right" href="data.html">DATASET</a>
         </div>
 
@@ -34,6 +31,13 @@
         <input type="file" name="file" />  
         <input type = "submit" value="Upload"> 
      </form>
+     <br><br>
+    
+    </div>
+    <div class="center-container">
+    <h1>To Predict the Placement</h1>
+    <br>
+     <button><a href="{{ url_for('predict') }}">Predict</a></button>
     </div>
 </body>
 </html>

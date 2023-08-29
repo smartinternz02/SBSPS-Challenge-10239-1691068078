@@ -2,12 +2,22 @@
 <html lang="en">
 <head>
     <title>PLACEMENT DETAILS📝</title>
+    <link rel="icon" href="{{ url_for('static',filename='sig.jpg')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='nav.css')}}">
     <link rel="stylesheet" href="{{ url_for('static',filename='prediction.css')}}">
-    <center><h1 style="background: #55ACEE;color: white;">Placement Prediction</h1></center>
-    <hr>
+
+    
 </head>
     
 <body>
+    <div class="topnav" id="myTopnav">
+        <img src="{{ url_for('static',filename='sig.jpg')}}" alt="">
+        <a style="float:right" href="#news">ABOUTUS</a>
+        <a style="float:right" href="{{ url_for('predict') }}">PREDICTION</a>
+        <a style="float:right" href="{{ url_for('visual') }}">VISUALIZATION</a>
+        <a style="float:right" href="data.html">DATASET</a>
+</div>
+<center><h1 style="background: #55ACEE;color: white;">Placement Prediction</h1></center>
     <center>
         <div class="center-container">
     <form action="/predict" method = "POST" enctype="multipart/form-data">

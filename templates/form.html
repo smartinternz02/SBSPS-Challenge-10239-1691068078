@@ -4,15 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PLACEMENT DETAILS📝</title>
+    <link rel="icon" href="{{ url_for('static',filename='sig.jpg')}}">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <center><h1>Select Visualization📊</h1></center>
-   <center><h3> "Visualizing The Future,One Pixel At A Time"</h3></center>
-   <link rel="stylesheet" href="{{ url_for('static',filename='form.css')}}">
-
-   <hr>
+    <link rel="stylesheet" href="{{ url_for('static',filename='form.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='nav.css')}}">
 </head>
 <body>
-   
+    <div class="topnav" id="myTopnav">
+        <img src="{{ url_for('static',filename='sig.jpg')}}" alt="">
+        <a style="float:right" href="#news">ABOUTUS</a>
+        <a style="float:right" href="{{ url_for('predict') }}">PREDICTION</a>
+        <a style="float:right" href="{{ url_for('visual') }}">VISUALIZATION</a>
+        <a style="float:right" href="data.html">DATASET</a>
+    </div>
+<center><h1>Select Visualization📊</h1></center>
+   <center><h3> "Visualizing The Future,One Pixel At A Time"</h3></center>
     <h1 style ="text-align: center;"></h1>
     <form style ="text-align: center;" action='/visual' method = "POST" enctype="multipart/form-data">  
     <h3><label for="category" >Select Your Visualization📊:</label></h3>
